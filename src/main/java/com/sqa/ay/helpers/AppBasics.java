@@ -25,24 +25,123 @@ import java.util.*;
  *
  */
 public class AppBasics {
-
 	static Scanner scanner = new Scanner(System.in);
+	private static String aString;
 
-	/**
-	 *
-	 */
-	public static void farewell(String appName, String user) {
-		System.out.println("Thank you for using the " + appName + "app " + user + ", and have a gret day!");
+	// Helper method to farewellUser
+
+	public static void farewellUser(String appName, String user) {
+		System.out.println("Thank you for using the " + appName + " App " + user + ", have a great day!");
+	}
+
+	public static boolean requestBoolean(String question) {
+		String input;
+		boolean booleanResponse = false;
+		System.out.print(question + " ");
+		input = scanner.nextLine();
+		try {
+			booleanResponse = Boolean.parseBoolean(input.trim());
+		} catch (NumberFormatException e) {
+			System.err.println("You have not entered a correct short value (" + input + ")\nUsing 0 for set value");
+		}
+		return booleanResponse;
+	}
+
+	public static char requestChar(String question) {
+		String input;
+		char character = 'A';
+		System.out.print(question + " ");
+		input = scanner.nextLine();
+		character = input.trim().charAt(0);
+		if (input.trim().length() > 1) {
+			System.out.println("You have entered more than one character (" + input + ")\nUsing 'A' for set value");
+		}
+		return character;
 	}
 
 	/**
-	 *
+	 * @param Helper
+	 *            method to return double
+	 * @return
 	 */
-	public static String welcomeUserAndGetName(String appName) {
+
+	public static double requestDouble(String question) {
 		String input;
-		System.out.println("Welcome to the " + appName + " Application.");
-		System.out.println("Could I get your name?");
+		double count = 0;
+		System.out.print(question + " ");
+		input = scanner.nextLine();
+		try {
+			count = Double.parseDouble(input.trim());
+		} catch (NumberFormatException e) {
+			System.err.println("You have not entered a correct double value (" + input + ")\nUsing 0 for set value");
+		}
+		return count;
+	}
+
+	// Helper method to return float
+	public static float requestFloat(String question) {
+		String input;
+		float count = 0;
+		System.out.print(question + " ");
+		input = scanner.nextLine();
+		try {
+			count = Float.parseFloat(input.trim());
+		} catch (NumberFormatException e) {
+			System.err.println("You have not entered a correct float value (" + input + ")\nUsing 0 for set value");
+		}
+		return count;
+	}
+
+	public static int requestInt(String question) {
+		String input;
+		int count = 0;
+		System.out.print(question + " ");
+		input = scanner.nextLine();
+		try {
+			count = Integer.parseInt(input.trim());
+		} catch (NumberFormatException e) {
+			System.err.println("You have not entered a correct integer value (" + input + ")\nUsing 0 for set value");
+		}
+		return count;
+	}
+
+	public static long requestLong(String question) {
+		String input;
+		long count = 0;
+		System.out.print(question + " ");
+		input = scanner.nextLine();
+		try {
+			count = Long.parseLong(input.trim());
+		} catch (NumberFormatException e) {
+			System.err.println("You have not entered a correct long value (" + input + ")\nUsing 0 for set value");
+		}
+		return count;
+	}
+
+	public static short requestShort(String question) {
+		String input;
+		short count = 0;
+		System.out.print(question + " ");
+		input = scanner.nextLine();
+		try {
+			count = Short.parseShort(input.trim());
+		} catch (NumberFormatException e) {
+			System.err.println("You have not entered a correct short value (" + input + ")\nUsing 0 for set value");
+		}
+		return count;
+	}
+
+	// Helper method to request any String
+	public static String requestString(String question) {
+		System.out.print(question + " ");
 		return scanner.nextLine();
 	}
 
+	// Helper method to welcome user and return supplied name.
+
+	public static String welcomeUserAndGetName(String appName) {
+		System.out.println("Welcome to the " + appName + " application!\n");
+		System.out.print("Could I get your name? ");
+		return scanner.nextLine();
+	}
 }
