@@ -1,5 +1,5 @@
-# Basic Project
-## Basic Project Structure
+# Class Project
+## Class Concepts Structure
 
 *Default Structure for A Basic Project*
 
